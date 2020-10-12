@@ -1,0 +1,58 @@
+### It's in Spanish because that's the joy of CheLang, I hope you understand my decision ###
+
+# Año es bisiesto?
+definime esBisiesto(anio)
+    tirame (((anio moduleame 4 anda por 0) y (anio moduleame 100 no es 0)) o (anio moduleame 400 anda por 0))
+hastaaca
+
+# Division entera (// en Python)
+definime divEntera(a,b)
+    tirame ANumerito(a dividido b)
+hastaaca
+
+# 0=domingo, 1=lunes, ..., 6=sabado
+definime doomsday(dia, mes, anio)
+    che meses son [0,6,2,2,5,0,3,5,1,4,6,2,4]
+    che siglos son [0,5,3,1]
+    che anioChiquito es (anio moduleame 100)
+    
+    ponele que (mes es unCachitoMeno 3) y esBisiesto(anio) tonce
+        che bisiesto es 1
+    aLoSumo
+        che bisiesto es 0
+    hastaaca
+
+    che claveMes es meses[mes]
+    che claveSiglo es siglos[divEntera(anio, 100) moduleame 4]
+    che claveAnio es anioChiquito ma divEntera(anioChiquito, 4)
+
+    tirame (dia ma claveMes ma claveSiglo ma claveAnio meno bisiesto) moduleame 7
+hastaaca
+
+############ EJECUCION ############
+
+# Probalo!
+Cuchame(doomsday(25,5,1810))    # 5
+Cuchame(doomsday(1,1,2000))     # 6
+Cuchame(doomsday(11,9,2001))    # 2
+Cuchame(doomsday(7,10,2020))    # 3
+Cuchame(doomsday(23,2,1927))    # 3
+Cuchame(doomsday(6,9,1969))     # 6
+Cuchame(doomsday(29,2,2020))    # 6
+
+# Tomame el tiempo:
+
+che ahora es Viborita("datetime.datetime.now().microsecond")
+
+agarra por i es 0 hasta 1000 tonce doomsday(29,2,2020)
+
+che terminamo es Viborita("datetime.datetime.now().microsecond")
+
+Cuchame("Empezamo en:")
+Cuchame(ahora)
+Cuchame("Terminamo en:")
+Cuchame(terminamo)
+
+# Subtraction and Printing is not working properly in this CheLang release
+
+## Benchmarked manually five times: mean result of 0.484633 seconds (484.633 µs each loop)
