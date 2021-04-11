@@ -10,7 +10,7 @@ You get the weekday by adding up all these numbers:
     - Codes are 0, 5, 3, 1 for 0, 1, 2, 3 (mod 4)
 - **The "year"** (last 2 digits of the year number, i.e. for 1984 it is 84)
 - **The "year" divided by 4** (rounded down)
-- **Substract 1** if the year is a leap year, and if the month is January or February
+- **Subtract 1** if the year is a leap year, and if the month is January or February
     - Leap years are those which are a multiple of 4 and not of 100, or else, a multiple of 400
 
 Then, you take modulo 7 of all that, and you find the weekday as:
@@ -55,7 +55,8 @@ I will use the same variable names for those that stand a chance at being high i
 - **Prolog** - 505 characters
 - **CheLang** - 595 characters (phew!)
 
-The ties are broken! However... C uses the `short int` declarations 4 times, which could just be changed to `int` to shave off 20 characters and beat JavaScript!
+The ties are broken! However... C uses the `short int` declarations 4 times, which could just be changed to `int` to shave off 20 characters and beat JavaScript!  
+(Future self note: why not use `char` in the first place or smt instead of the meme `short int`, lol?)
 
 In any case, the winner here turns out to be **Python**, however **Julia** comes really, really close to it. Removing the `const` declarations in Julia would make it beat Python (and still outperform it in execution time 🤫) but we're leaving them just so that the victory in the next section is as crushing as it is. (spoilers!!)
 
@@ -102,7 +103,7 @@ Finally, in the "most elegant code" category, the winner _has_ to be **Julia** a
 
 ### Final words
 
-I'm quite sorry to not see Haskell in any of these awards, since it is such an amazing language that I like a lot. I will highlight from it that I like very much how the _doomsday_ function is called: `doomsday 29 2 2020`, no parenthesis anywhere. That is very clean and I like it.
+I'm quite sorry to not see Haskell in any of these awards, since it is such an amazing language that I like a lot. I will highlight from it that I like very much how the _doomsday_ function is called: `doomsday 29 2 2020`, no parentheses anywhere. That is very clean and I like it.
 
 Also, a pity for Prolog, but this is not really the use for this language. Maybe my code was terrible, my apologies to the little owl! 🦉
 
